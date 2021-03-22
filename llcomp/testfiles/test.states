@@ -1,8 +1,0 @@
-state_number energy degeneracy angmom_total parity_total parity_rotationless electronic_state_no vibrational angmom_proj_orbital angmom_spin angmom_proj_spin
-           1     2.860444      1       0 + e X3Sigma-     0  0       0       0
-           2    17.162086      5       2 + e X3Sigma-     0  0       0       0
-           3  1552.561374      5       2 + e X3Sigma-     1  0       1       1
-           4  1566.705280      5       2 + e X3Sigma-     1  0       0       0
-           5  3078.657784      5       2 + e X3Sigma-     2  0       1       1
-           6  3092.644733      5       2 + e X3Sigma-     2  0       0       0
-           7  4581.190420      5       2 + e X3Sigma-     3  0       1       1

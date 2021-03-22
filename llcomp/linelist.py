@@ -1,6 +1,6 @@
 import pandas as pd
 import numpy  as np
-from ExGoMol.data import detect_file_headers, convert_from_branch
+from llcomp.data import detect_file_headers, convert_from_branch, compare_dataframes
 
 
 """
@@ -232,6 +232,13 @@ class MergedLinelist(LinelistObject):
     """Merged linelist object for storing two line-by-line matched linelists."""
     state_suffixes = ['_f_L', '_i_L', '_f_R', '_i_R'] #possible suffixes for state data
     transition_suffixes = ['_L', '_R'] #possible suffixes for transition data
+
+    def __init__(self, leftLinelist, rightLinelist, merge_on=[
+            "angmom_total_f", "angmom_total_i",
+            "vibrational_f", "vibrational_i",
+            "electronic_state_f", "electronic_state_i"]):
+        merged_df = compare_dataframes(leftLinelist, rightLinelist, merge_on)
+        super().__init__(merged_df)
 
 def exomol_to_linelist(states_file=None, trans_file=None):
     """Convert ExoMol states and trans file to Linelist object.

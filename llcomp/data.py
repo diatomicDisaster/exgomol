@@ -11,12 +11,7 @@ def y_as_fx(dataframe, x=None, y=None):
 @todo: Add method for merging linelists.
 @body: Add a Linelist method for merging self to another Dataframe via this method
 """
-def compare_dataframes(left_df, right_df, 
-    merge_on=[
-        "angmom_total_f", "angmom_total_i", 
-        "vibrational_f", "vibrational_i",
-        "electronic_state_f", "electronic_state_i"
-    ]):
+def compare_dataframes(left_df, right_df, merge_on):
     """Internal method for retrieving comparisons to other linelists"""
     return left_df.merge(right_df,
         how='inner',
@@ -71,13 +66,8 @@ def is_iterable(obj, strings=False):
 
 def print_linelist(linelist, fname="blah.txt", cols=None, num_rows=50):
     df = linelist.dataframe
-<<<<<<< HEAD
-    pd.set_option('display.max_columns', len(df.columns))
-    pd.set_option('display.max_rows', num_rows)
-=======
     pd.set_option('display.max_columns', df.shape[1])
     pd.set_option('display.max_rows', df.shape[0])
->>>>>>> 1f82c72b52a10e18f4f5c1787b2cacc4a8ddd4e7
     pd.set_option('display.width', 1000)
     with open(fname, 'w') as f: 
         if cols:
